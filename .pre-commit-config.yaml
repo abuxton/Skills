@@ -1,0 +1,67 @@
+# SKIP=<id> <id> git commit -m "foo"
+# git commit -m "bar" --no-verify #skip all
+# https://pre-commit.com/hooks.html
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    - id: check-docstring-first
+    - id: check-shebang-scripts-are-executable
+    - id: check-json
+    - id: check-added-large-files
+    - id: check-yaml
+    - id: check-merge-conflict
+    - id: debug-statements
+    - id: detect-private-key
+    - id: end-of-file-fixer
+    - id: mixed-line-ending
+    - id: pretty-format-json
+    - id: requirements-txt-fixer
+    - id: trailing-whitespace
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.39.0
+    hooks:
+    - id: markdownlint
+
+  - repo: https://github.com/tcort/markdown-link-check
+    rev: v3.11.2
+    hooks:
+    - id: markdown-link-check
+      args: [--quiet]
+
+  - repo: https://github.com/syntaqx/git-hooks
+    rev: v0.0.18
+    hooks:
+    - id: forbid-binary
+      exclude: |
+        (?x)^(
+            favicon.ico|
+            .*\.(jpg|jpeg|png|gif|ico|svg)$
+        )$
+
+  # - repo: https://github.com/antonbabenko/pre-commit-terraform
+  #   rev: v1.88.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  #   hooks:
+  #     - id: terraform_fmt
+  #     - id: terraform_validate
+  #     - id: terraform_docs
+  #     - id: terraform_tflint
+
+  # - repo: https://github.com/dnephin/pre-commit-golang
+  #   rev: master
+  #   hooks:
+  #     - id: go-fmt
+  #     - id: go-vet
+  #     - id: go-lint
+  #     - id: go-imports
+  #     - id: go-cyclo
+  #       args: [-over=15]
+  #     - id: validate-toml
+  #     - id: no-go-testing
+  #     - id: golangci-lint
+  #     - id: go-critic
+  #     - id: go-unit-tests
+  #     - id: go-build
+  #     - id: go-mod-tidy
