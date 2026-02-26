@@ -31,7 +31,7 @@ To symlink skills automatically on every `npm install`, add a `prepare` script t
 ```json
 {
   "scripts": {
-    "prepare": "skills-npm"
+    "prepare": "npx skills-npm"
   }
 }
 ```
