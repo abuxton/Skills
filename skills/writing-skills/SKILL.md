@@ -53,7 +53,7 @@ description: '<One sentence describing what the skill does.>'
 
 1. **Define the skill scope** — Identify one discrete task the skill should perform. Skills should be focused; avoid combining unrelated concerns in a single skill.
 
-2. **Name the skill** — Choose a kebab-case name that describes the task (e.g., `shields-badges`, `npm-publishing`, `openapi-linting`). Create the directory `skills/<skill-name>/`.
+2. **Name the skill** — Choose a kebab-case name that describes the task (e.g., `shields-badges`, `publishing-npm`, `openapi-linting`). Create the directory `skills/<skill-name>/`.
 
 3. **Write the frontmatter** — Open `SKILL.md` with the YAML frontmatter block containing `name` and `description`.
 
