@@ -8,6 +8,7 @@ Agent skills for GitHub Copilot, built following the
 | Name | Description |
 | ---- | ----------- |
 | [shields-badges](skills/shields-badges/SKILL.md) | Analyse a repository to identify its focus and technology stack, then apply appropriate [shields.io](https://shields.io) badges to markdown files. |
+| [terraform-vault-permanence](skills/terraform-vault-permanence/SKILL.md) | Orchestrate Vault MCP write operations (`create_mount`, `write_secret`) and generate smoke-tested Terraform HCL that persists each write as infrastructure-as-code using a locals-map + `for_each` pattern. |
 
 ## Usage
 
