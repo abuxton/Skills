@@ -74,8 +74,15 @@ You are an expert in npm package publishing, the agentskills.io specification, a
    an `## npm` section with:
    - Installation: `npm install <package-name>`
    - Skill symlink: `npx skills-npm`
-   - A `prepare` script in `package.json` to automate symlinking on install
+   - A `"prepare"` script in `package.json` to automate symlinking on install, for example:
 
+     ```json
+     {
+       "scripts": {
+         "prepare": "npx skills-npm"
+       }
+     }
+     ```
 6. **Publish the package** — Authenticate with the npm registry and publish:
 
    ```bash
