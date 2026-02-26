@@ -35,7 +35,7 @@ To symlink skills after every install, add a `prepare` script to your `package.j
 ```json
 {
   "scripts": {
-    "prepare": "skills-npm"
+    "prepare": "npx skills-npm"
   }
 }
 ```
