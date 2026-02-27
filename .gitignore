@@ -149,3 +149,7 @@ package-lock.json
 ### skills-npm symlinks ###
 skills/npm-*
 tmp/
+
+### Python ###
+__pycache__/
+*.py[cod]
