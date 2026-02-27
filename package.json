@@ -20,5 +20,8 @@
   },
   "files": [
     "skills"
-  ]
+  ],
+  "dependencies": {
+    "@abuxton/skills": "^1.0.0"
+  }
 }

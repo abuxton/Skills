@@ -15,14 +15,30 @@ publishable via [skills-npm](https://github.com/antfu/skills-npm).
 | [writing-skills](skills/writing-skills/SKILL.md) | Author high-quality agent skills following the agentskills.io specification, with correct frontmatter, workflow structure, and reference assets. |
 | [publishing-npm](skills/publishing-npm/SKILL.md) | Prepare and publish an npm package that ships agent skills, following the skills-npm convention for skill bundling and distribution. |
 | [github-gist](skills/github-gist/SKILL.md) | Create, manage, and organize GitHub Gists using the gh and CLI. |
+| [asciinema-record](skills/asciinema-record/SKILL.md) | Record a terminal session to a named .cast file using asciinema, trim the recording to marked content, and optionally convert it to a GIF using agg. |
 
 ## Usage
 
-### Via npm (Recommended)
+![npx install ascii](./_assets/asciinema/skills-session.gif)
+
+### Via npx (Recommended)
+
+Install the package and symlink the bundled skills using [npx](https://github.com/antfu/skills-npm):
+
+```bash
+npx skills -h
+> Usage: skills <command> [options]
+...
+
+npx skills install @abuxton/skills
+
+```
+### Via npm
 
 Install the package and symlink the bundled skills using [skills-npm](https://github.com/antfu/skills-npm):
 
 ```bash
+
 npm install @abuxton/skills
 npx skills-npm
 ```
