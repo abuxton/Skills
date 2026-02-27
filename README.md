@@ -1,7 +1,8 @@
 # Skills
 
-[![npm version](https://img.shields.io/npm/v/@abuxton/skills?style=flat)](https://npmjs.com/package/@abuxton/skills)
-[![License](https://img.shields.io/github/license/abuxton/Skills)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/abuxton/Skills/npm-publish.yml?branch=main)](https://github.com/abuxton/Skills/actions)
+[![npm version](https://img.shields.io/npm/v/@abuxton/skills?style=flat)](https://www.npmjs.com/package/@abuxton/skills)
+[![License](https://img.shields.io/github/license/abuxton/Skills)](https://github.com/abuxton/Skills/blob/main/LICENSE)
 
 Agent skills for GitHub Copilot and other coding agents, built following the
 [agentskills.io specification](https://agentskills.io/specification) and
