@@ -140,3 +140,11 @@ sketch
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/dotenv,git,go,linux,macos,osx,react,ssh,visualstudiocode
+
+### npm ###
+node_modules/
+npm-debug.log*
+package-lock.json
+
+### skills-npm symlinks ###
+skills/npm-*
