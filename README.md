@@ -20,11 +20,26 @@ publishable via [skills-npm](https://github.com/antfu/skills-npm).
 
 ## Usage
 
-### Via npm (Recommended)
+![npx install ascii](./_assets/asciinema/skills-session.gif)
+
+### Via npx (Recommended)
+
+Install the package and symlink the bundled skills using [npx](https://github.com/antfu/skills-npm):
+
+```bash
+npx skills -h
+> Usage: skills <command> [options]
+...
+
+npx skills install @abuxton/skills
+
+```
+### Via npm
 
 Install the package and symlink the bundled skills using [skills-npm](https://github.com/antfu/skills-npm):
 
 ```bash
+
 npm install @abuxton/skills
 npx skills-npm
 ```
