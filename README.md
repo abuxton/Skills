@@ -14,6 +14,7 @@ publishable via [skills-npm](https://github.com/antfu/skills-npm).
 | [shields-badges](skills/shields-badges/SKILL.md) | Analyse a repository to identify its focus and technology stack, then apply appropriate [shields.io](https://shields.io) badges to markdown files. |
 | [writing-skills](skills/writing-skills/SKILL.md) | Author high-quality agent skills following the agentskills.io specification, with correct frontmatter, workflow structure, and reference assets. |
 | [publishing-npm](skills/publishing-npm/SKILL.md) | Prepare and publish an npm package that ships agent skills, following the skills-npm convention for skill bundling and distribution. |
+| [github-gist](skills/github-gist/SKILL.md) | Create, manage, and organize GitHub Gists using the gh and CLI. |
 
 ## Usage
 
