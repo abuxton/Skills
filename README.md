@@ -12,6 +12,7 @@ publishable via [skills-npm](https://github.com/antfu/skills-npm).
 | Name | Description |
 | ---- | ----------- |
 | [shields-badges](skills/shields-badges/SKILL.md) | Analyse a repository to identify its focus and technology stack, then apply appropriate [shields.io](https://shields.io) badges to markdown files. |
+| [terraform-vault-permanence](skills/terraform-vault-permanence/SKILL.md) | Orchestrate Vault MCP write operations (`create_mount`, `write_secret`) and generate smoke-tested Terraform HCL that persists each write as infrastructure-as-code using a locals-map + `for_each` pattern. |
 | [writing-skills](skills/writing-skills/SKILL.md) | Author high-quality agent skills following the agentskills.io specification, with correct frontmatter, workflow structure, and reference assets. |
 | [publishing-npm](skills/publishing-npm/SKILL.md) | Prepare and publish an npm package that ships agent skills, following the skills-npm convention for skill bundling and distribution. |
 
