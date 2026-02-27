@@ -148,3 +148,4 @@ package-lock.json
 
 ### skills-npm symlinks ###
 skills/npm-*
+tmp/
