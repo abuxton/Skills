@@ -16,7 +16,7 @@ Spaces become `_`, special characters are URL-encoded.
 
 | Purpose | URL Pattern |
 | ------- | ----------- |
-| Workflow/CI status | `https://img.shields.io/github/actions/workflow/status/<USER>/<REPO>/<WORKFLOW_FILE>` |
+| Workflow/CI status | `https://img.shields.io/github/actions/workflow/status/<USER>/<REPO>/<WORKFLOW_FILE>?branch=<BRANCH>` |
 | License | `https://img.shields.io/github/license/<USER>/<REPO>` |
 | Latest release | `https://img.shields.io/github/v/release/<USER>/<REPO>` |
 | Stars | `https://img.shields.io/github/stars/<USER>/<REPO>` |
@@ -97,8 +97,8 @@ Place badges immediately after the main title (H1 heading), before any prose des
 ```markdown
 # My Project
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/user/repo/ci.yml)](https://github.com/user/repo/actions)
-[![License](https://img.shields.io/github/license/user/repo)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/user/repo/ci.yml?branch=main)](https://github.com/user/repo/actions)
+[![License](https://img.shields.io/github/license/user/repo)](https://github.com/user/repo/blob/main/LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/user/repo)](https://github.com/user/repo/releases)
 
 Project description here...
