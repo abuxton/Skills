@@ -38,19 +38,13 @@ Ask:
 
 ### Step 2 — Copy variable sets
 
-**Option (a) — all variable sets:**
+Run the same command regardless of scope — `tfm copy varsets` automatically copies all variable sets when no `varsets-map` is present in the config file, or only the mapped variable sets when `varsets-map` is configured:
 
 ```bash
 tfm copy varsets --config "$CONFIG_PATH"
 ```
 
-**Option (b) — only mapped variable sets (uses `varsets-map` from config):**
-
-```bash
-tfm copy varsets --config "$CONFIG_PATH"
-```
-
-> Note: `tfm copy varsets` automatically uses the `varsets-map` if it is present in the config file.
+> Note: If `varsets-map` is present in the config file, `tfm` will copy only the listed variable sets and rename them at the destination using the right-hand name in each `source=destination` pair. If `varsets-map` is absent, all variable sets are copied.
 
 Display the full output to the user after the command completes.
 

@@ -18,6 +18,13 @@ dst_tfc_token    = "<owner token for destination organisation>"
 
 ## Full Parameter Reference
 
+> **Naming convention note:** `tfm` uses two different naming conventions for parameters, matching the upstream CLI exactly.
+> Snake\_case (`src_tfe_hostname`, `dst_tfc_token`, etc.) is used for connection credentials and most scalar settings.
+> Kebab-case (`workspaces-map`, `agents-map`, `vcs-map`, etc.) is used for list/map settings.
+> Use the exact parameter name shown in the table below. HCL requires kebab-case keys to be quoted (e.g. `"workspaces-map" = [...]`).
+>
+> **Note on `github_organization`:** This parameter uses American English spelling because it reflects the exact key name defined by the `tfm` CLI. The description in this reference uses British English throughout.
+
 | Parameter | Type | Required | Description |
 | --------- | ---- | -------- | ----------- |
 | `src_tfe_hostname` | string | Yes (TFE/TFC migrations) | Hostname of the source TFE server or `app.terraform.io` for TFC |
@@ -89,7 +96,7 @@ workspaces = [
 ## Agent Pool Map Example
 
 ```hcl
-agents-map = [
+"agents-map" = [
   "apool-DgzkahoomwHsBHcJ=apool-vbrJZKLnPy6aLVxE",
   "apool-DgzkahoomwHsBHc3=apool-vbrJZKLnPy6aLVx4"
 ]
@@ -98,7 +105,7 @@ agents-map = [
 ## Variable Set Map Example
 
 ```hcl
-varsets-map = [
+"varsets-map" = [
   "Azure-creds=New-Azure-Creds",
   "aws-creds2=New-AWS-Creds"
 ]
@@ -107,7 +114,7 @@ varsets-map = [
 ## VCS Map Example
 
 ```hcl
-vcs-map = [
+"vcs-map" = [
   "ot-5uwu2Kq8mEyLFPzP=ot-coPDFTEr66YZ9X9n",
   "ghain-sc8a3b12S212gy45=ghain-B3asgvX3oF541aDo"
 ]
@@ -116,7 +123,7 @@ vcs-map = [
 ## SSH Key Map Example
 
 ```hcl
-ssh-map = [
+"ssh-map" = [
   "sshkey-sPLAKMcqnWtHPSgx=sshkey-CRLmPJpoHwsNFAoN"
 ]
 ```

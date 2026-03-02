@@ -36,7 +36,7 @@ The migration is divided into the following ordered phases. Use the sub-skills l
 | 2 | [tfm-migration-copy-workspaces](../tfm-migration-copy-workspaces/SKILL.md) | Copy workspace definitions from source to destination |
 | 3 | [tfm-migration-copy-state](../tfm-migration-copy-state/SKILL.md) | Copy Terraform state from source workspaces to destination workspaces |
 | 4 | [tfm-migration-copy-varsets](../tfm-migration-copy-varsets/SKILL.md) | Copy variable sets from source to destination |
-| 5 | [tfm-migration-finalize](../tfm-migration-finalize/SKILL.md) | Lock source workspaces, remove VCS connections on source, and verify the migration |
+| 5 | [tfm-migration-finalise](../tfm-migration-finalise/SKILL.md) | Lock source workspaces, remove VCS connections on source, and verify the migration |
 
 ## Workflow
 
@@ -81,7 +81,7 @@ After completion, ask:
 
 ### Step 5 — Finalise
 
-Invoke the **tfm-migration-finalize** sub-skill.
+Invoke the **tfm-migration-finalise** sub-skill.
 
 After completion, display a migration summary and ask the user to verify their destination organisation manually before decommissioning the source.
 

@@ -1,5 +1,5 @@
 ---
-name: tfm-migration-finalize
+name: tfm-migration-finalise
 description: 'Finalise a TFE/TFC migration by locking source workspaces, removing source VCS connections, and verifying the destination organisation using the tfm CLI.'
 ---
 
