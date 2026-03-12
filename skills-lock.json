@@ -6,10 +6,25 @@
       "sourceType": "github",
       "computedHash": "144acdc40421ec20e242a1fa926363ef0674eacc0c4ec633f8a714c87705fdc9"
     },
+    "npm-package": {
+      "source": "jwynia/agent-skills",
+      "sourceType": "github",
+      "computedHash": "2c66260f5e3220e9714f708833203d0313021c4d27c3aa006c9c35c7f7d6cb22"
+    },
+    "npx-cli": {
+      "source": "jwynia/agent-skills",
+      "sourceType": "github",
+      "computedHash": "2079fa9418b7ed0af1d613d92c8e209eb0de3e74429b2e87aa8285f92a2fadc2"
+    },
     "prompt-builder": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
       "computedHash": "1591d452ec2ba6d70faaa96b481f7c8261a280df838fee9c5295804fa28acbd3"
+    },
+    "skill-builder": {
+      "source": "jwynia/agent-skills",
+      "sourceType": "github",
+      "computedHash": "99184da5697d108459ea4ac6565593fbe915febdb63f90096e6a687aa9f10c94"
     }
   }
 }
