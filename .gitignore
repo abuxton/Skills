@@ -152,3 +152,6 @@ tmp/
 
 .bob/**
 
+### Python ###
+__pycache__/
+*.py[cod]

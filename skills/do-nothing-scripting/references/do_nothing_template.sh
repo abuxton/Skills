@@ -2,7 +2,7 @@
 # do_nothing_template.sh
 #
 # TEMPLATE — Do-Nothing Script
-# Generated from: <source .cast file>
+# Generated from: <source file or procedure description>
 #
 # A do-nothing script encodes a manual procedure as a sequence of step
 # functions. Each function prints instructions and waits for the operator to

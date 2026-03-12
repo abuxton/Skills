@@ -1,7 +1,8 @@
 # Skills
 
-[![npm version](https://img.shields.io/npm/v/@abuxton/skills?style=flat)](https://npmjs.com/package/@abuxton/skills)
-[![License](https://img.shields.io/github/license/abuxton/Skills)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/abuxton/Skills/npm-publish.yml?branch=main)](https://github.com/abuxton/Skills/actions)
+[![npm version](https://img.shields.io/npm/v/@abuxton/skills?style=flat)](https://www.npmjs.com/package/@abuxton/skills)
+[![License](https://img.shields.io/github/license/abuxton/Skills)](https://github.com/abuxton/Skills/blob/main/LICENSE)
 
 Agent skills for GitHub Copilot and other coding agents, built following the
 [agentskills.io specification](https://agentskills.io/specification) and
@@ -17,15 +18,30 @@ publishable via [skills-npm](https://github.com/antfu/skills-npm).
 | [github-gist](skills/github-gist/SKILL.md) | Create, manage, and organize GitHub Gists using the gh and CLI. |
 | [gitattributes-manager](skills/gitattributes-manager/SKILL.md) | Create, review, and safely update `.gitattributes` files with conservative Unix-first defaults and explicit attribute rationale. |
 | [asciinema-record](skills/asciinema-record/SKILL.md) | Record a terminal session to a named .cast file using asciinema, trim the recording to marked content, and optionally convert it to a GIF using agg. |
-| [do-nothing-scripting](skills/do-nothing-scripting/SKILL.md) | Derive a do-nothing bash script from an asciinema .cast file, encoding each observed command as a manual step that prompts the operator before proceeding. |
+| [do-nothing-scripting](skills/do-nothing-scripting/SKILL.md) | Derive a do-nothing bash script from an asciinema `.cast` file, a plain text file, shell history output, or a user interview — encoding each step as a manual prompt that the operator can later replace with real automation. |
 
 ## Usage
 
-### Via npm (Recommended)
+![npx install ascii](./_assets/asciinema/skills-session.gif)
+
+### Via npx (Recommended)
+
+Install the package and symlink the bundled skills using [npx](https://github.com/antfu/skills-npm):
+
+```bash
+npx skills -h
+> Usage: skills <command> [options]
+...
+
+npx skills install @abuxton/skills
+
+```
+### Via npm
 
 Install the package and symlink the bundled skills using [skills-npm](https://github.com/antfu/skills-npm):
 
 ```bash
+
 npm install @abuxton/skills
 npx skills-npm
 ```

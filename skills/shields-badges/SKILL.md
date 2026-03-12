@@ -52,8 +52,9 @@ You are an expert in open-source project presentation and markdown authoring. Yo
    ```
 
    - Use descriptive `Alt Text` (e.g. `Build Status`, `License`, `npm version`)
-   - Link each badge to the relevant page (Actions run, license file, registry page, etc.)
-   - Replace `<USER>` and `<REPO>` placeholders with the actual GitHub owner and repository name
+   - Link each badge to the relevant page (Actions run, license file, registry page, etc.) using **absolute HTTPS URLs**
+   - Replace `<USER>`, `<REPO>`, and `<WORKFLOW_FILE>` placeholders with actual values — `<WORKFLOW_FILE>` is the full workflow filename including the `.yml` extension (e.g. `ci.yml`)
+   - Add `?branch=main` (or the appropriate default branch name) to workflow status badge URLs
 
 5. **Apply badges to README** — Insert the badge block immediately after the main H1 heading (`# Title`) and before any prose text. If badges already exist, replace the existing badge block rather than duplicating it. If there is no H1 heading, insert at the top of the file.
 
@@ -67,8 +68,8 @@ You are an expert in open-source project presentation and markdown authoring. Yo
 ### Dynamic GitHub Badge Examples
 
 ```markdown
-[![Build Status](https://img.shields.io/github/actions/workflow/status/<USER>/<REPO>/<WORKFLOW>.yml)](https://github.com/<USER>/<REPO>/actions)
-[![License](https://img.shields.io/github/license/<USER>/<REPO>)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/<USER>/<REPO>/<WORKFLOW_FILE>?branch=main)](https://github.com/<USER>/<REPO>/actions)
+[![License](https://img.shields.io/github/license/<USER>/<REPO>)](https://github.com/<USER>/<REPO>/blob/main/LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/<USER>/<REPO>)](https://github.com/<USER>/<REPO>/releases)
 [![Top Language](https://img.shields.io/github/languages/top/<USER>/<REPO>)](https://github.com/<USER>/<REPO>)
 [![Contributors](https://img.shields.io/github/contributors/<USER>/<REPO>)](https://github.com/<USER>/<REPO>/graphs/contributors)
