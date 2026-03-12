@@ -1,5 +1,7 @@
 # GitHub Copilot Instructions
 
+Before making skill-related changes, read `AGENTS.md`. It is the project reference for available skills, how skills are structured in this repository, and which documentation must be updated when a skill is added or changed.
+
 ## Project Overview
 
 This is a standard template repository for working projects. It provides baseline tooling,
