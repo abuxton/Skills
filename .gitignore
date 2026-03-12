@@ -150,6 +150,8 @@ package-lock.json
 skills/npm-*
 tmp/
 
+.bob/**
+
 ### Python ###
 __pycache__/
 *.py[cod]
