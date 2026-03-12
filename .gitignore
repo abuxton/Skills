@@ -151,7 +151,9 @@ skills/npm-*
 tmp/
 
 .bob/**
-
+**/skills/**
 ### Python ###
 __pycache__/
 *.py[cod]
+**/skills/**
+!/skills/**

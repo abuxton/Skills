@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "gitattributes-manager": {
+      "source": "abuxton/skills",
+      "sourceType": "github",
+      "computedHash": "144acdc40421ec20e242a1fa926363ef0674eacc0c4ec633f8a714c87705fdc9"
+    },
     "prompt-builder": {
       "source": "github/awesome-copilot",
       "sourceType": "github",
