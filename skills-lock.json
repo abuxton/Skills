@@ -25,6 +25,11 @@
       "source": "jwynia/agent-skills",
       "sourceType": "github",
       "computedHash": "99184da5697d108459ea4ac6565593fbe915febdb63f90096e6a687aa9f10c94"
+    },
+    "xkcd-says-what": {
+      "source": "abuxton/Skills",
+      "sourceType": "github",
+      "computedHash": "879361a1fa1874307bcf93f513261fc6aff1cc2a11688bc4d54e9333b3170289"
     }
   }
 }

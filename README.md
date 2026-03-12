@@ -8,6 +8,12 @@ Agent skills for GitHub Copilot and other coding agents, built following the
 [agentskills.io specification](https://agentskills.io/specification) and
 publishable via [skills-npm](https://github.com/antfu/skills-npm).
 
+## Favourite XKCD
+
+[![Standards](https://imgs.xkcd.com/comics/standards.png "Fortunately, the charging one has been solved now that we've all standardized on mini-USB. Or is it micro-USB? Shit.")](https://xkcd.com/927/)
+
+My perennial favourite is XKCD #927, "Standards" — which feels especially on-brand for a repository full of reusable tooling and conventions.
+
 ## Available Skills
 
 | Name | Description |
