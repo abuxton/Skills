@@ -198,8 +198,11 @@ terraform init -backend=false
 # 4. Validate syntax and schema
 terraform validate
 
-# 5. Plan (requires Vault credentials; acceptable to see auth errors in CI)
-terraform plan
+# 5. Plan — always pass -input=false to prevent interactive prompts.
+#    Supply a dummy token via TF_VAR_vault_token so Terraform does not
+#    block waiting for variable input. A Vault authentication error is
+#    acceptable and expected when real credentials are unavailable.
+TF_VAR_vault_token=smoke-test terraform plan -input=false
 ```
 
 Expected results:
@@ -209,7 +212,13 @@ Expected results:
 | `tflint` | Exit 0, zero errors |
 | `terraform fmt -check` | Exit 0 (no diff) |
 | `terraform validate` | `Success! The configuration is valid.` |
-| `terraform plan` | Plan succeeds or fails only on Vault auth (not on HCL errors) |
+| `terraform plan -input=false` | Plan succeeds, or fails only on Vault auth — not on HCL errors |
+
+If real Vault credentials are unavailable:
+
+- The dummy `TF_VAR_vault_token` value prevents interactive prompting while still exercising the provider configuration path.
+- An authentication error from the Vault provider (`Error making API request`) is an **acceptable** smoke-test outcome; it confirms the HCL is syntactically and structurally valid.
+- If even a dummy plan is undesirable (e.g. strict CI), skip the `terraform plan` step and document that it was omitted due to missing Vault credentials.
 
 ---
 

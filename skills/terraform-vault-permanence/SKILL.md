@@ -65,10 +65,12 @@ Record every successful write — mount path, secret path, key name — for use 
 
 ### 3. Determine KV version per mount
 
-After mounting, check whether each mount is KV v1 or KV v2 so the correct Terraform resource is used:
+Infer the KV version from the `type` and `options` supplied to `create_mount` in step 2 so the correct Terraform resource is selected:
 
-- `type = "kv"` with `options = { version = "2" }` → `vault_kv_secret_v2`
+- `type = "kv-v2"` or `type = "kv"` with `options = { version = "2" }` → `vault_kv_secret_v2`
 - `type = "kv"` with `options = { version = "1" }` or no version option → `vault_kv_secret`
+
+If writing to a **pre-existing** mount whose version is unknown, use the read-only `list_mounts` Vault MCP tool to discover the mount type and options before generating HCL.
 
 ### 4. Generate Terraform HCL
 
@@ -104,6 +106,7 @@ If `terraform plan` requires real Vault credentials that are not available:
 - Prefer running `terraform plan -input=false` in a non-interactive mode.
 - If a real Vault token is not configured, you may set a dummy `TF_VAR_vault_token` value and run `terraform plan -input=false`, accepting an authentication error from the Vault provider as an expected outcome and explicitly noting this in the smoke-test summary; or
 - Skip the `terraform plan` step entirely when credentials are unavailable, and clearly state in the output that `plan` was not executed due to missing Vault authentication.
+
 ### 6. Report results
 
 Return to the user:
