@@ -99,8 +99,11 @@ Acceptable outcomes:
 - `terraform validate` — `Success! The configuration is valid.`
 - `terraform plan` — plan succeeds; note any expected diffs
 
-If `terraform plan` requires real Vault credentials that are not available, run it with `-target` scoped to a null resource or accept the authentication error as expected and note it in the output.
+If `terraform plan` requires real Vault credentials that are not available:
 
+- Prefer running `terraform plan -input=false` in a non-interactive mode.
+- If a real Vault token is not configured, you may set a dummy `TF_VAR_vault_token` value and run `terraform plan -input=false`, accepting an authentication error from the Vault provider as an expected outcome and explicitly noting this in the smoke-test summary; or
+- Skip the `terraform plan` step entirely when credentials are unavailable, and clearly state in the output that `plan` was not executed due to missing Vault authentication.
 ### 6. Report results
 
 Return to the user:
