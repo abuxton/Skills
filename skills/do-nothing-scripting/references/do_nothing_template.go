@@ -21,7 +21,7 @@
 //
 // To use the donothing library in your own module:
 //   go mod init example.com/your-procedure
-//   go get github.com/danslimmon/donothing
+//   go get github.com/danslimmon/donothing@v0.2.0
 // ------------------------------------------------------------------------------
 
 package main
@@ -36,6 +36,9 @@ import (
 func procedure() *donothing.Procedure {
 	pcd := donothing.NewProcedure()
 	pcd.Short(`<Procedure Name>`)
+	// Long() automatically strips the longest common leading whitespace from all
+	// non-empty lines, so the indented style used here is safe and renders correctly
+	// as Markdown (no unintended code blocks).
 	pcd.Long(`
 		<Describe the procedure here. Markdown is supported.>
 
@@ -137,12 +140,20 @@ func procedure() *donothing.Procedure {
 func main() {
 	pcd := procedure()
 
-	// Validate the procedure definition before running
-	if problems, err := pcd.Check(); err != nil {
+	// Validate the procedure definition before running.
+	// Check both the problems list and the error return independently: a non-empty
+	// problems slice means the procedure is misconfigured; a non-nil err with an empty
+	// problems slice indicates an unexpected internal error.
+	problems, err := pcd.Check()
+	if len(problems) > 0 {
 		fmt.Fprintf(os.Stderr, "Procedure definition has problems:\n")
 		for _, p := range problems {
 			fmt.Fprintf(os.Stderr, "  - %s\n", p)
 		}
+		os.Exit(1)
+	}
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error checking procedure: %v\n", err)
 		os.Exit(1)
 	}
 

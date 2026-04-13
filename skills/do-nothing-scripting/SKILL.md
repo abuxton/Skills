@@ -37,8 +37,8 @@ You are an expert in automation strategy, Go programming, shell scripting, and t
 # Initialise a new Go module (if needed)
 go mod init example.com/your-procedure
 
-# Add the donothing dependency
-go get github.com/danslimmon/donothing
+# Add the donothing dependency (pinned to the version this template targets)
+go get github.com/danslimmon/donothing@v0.2.0
 
 # Copy the template as a starting point
 cp skills/do-nothing-scripting/references/do_nothing_template.go ./do_nothing.go
@@ -63,7 +63,7 @@ Key Go library concepts:
 | Step instructions | `step.Long("...")` | Markdown instructions; reference outputs with `@@OutputName@@` |
 | Declare output | `step.OutputString("Name", "description")` | Prompts the operator for a value; available to later steps as input |
 | Declare input | `step.InputString("Name", required)` | Marks that this step consumes the named output from a prior step |
-| Validate | `pcd.Check()` | Returns a list of problems with the procedure definition |
+| Validate | `pcd.Check()` | Returns `(problems []string, err error)`; exit if `len(problems) > 0` (misconfigured procedure) or `err != nil` (internal error) |
 | Run procedure | `pcd.Execute()` | Interactive run; returns `error` |
 | Print docs | `pcd.Render(os.Stdout)` | Emit Markdown documentation to any `io.Writer`; returns `error` |
 
@@ -136,7 +136,7 @@ A do-nothing script:
    - For values that flow between steps, declare `step.OutputString("Name", "description")` on the producing step and `step.InputString("Name", true)` on each consuming step
    - The operator will be prompted to supply each output value at runtime; earlier outputs are shown in later steps' instructions automatically
    - To automate a step: implement the logic as a Go function, call it in `main()` directly (outside the procedure), and remove the corresponding `AddStep` block
-   - Call `pcd.Check()` before executing to validate the procedure definition
+   - Call `pcd.Check()` before executing — fail if `len(problems) > 0` or if `err != nil`
    - End `main()` with `pcd.Execute()` for interactive use, or `pcd.Render(os.Stdout)` when the `--print` flag is passed; handle the returned `error`
    - Write the file to `./tmp/<name>_do_nothing.go`
 
@@ -175,12 +175,12 @@ A do-nothing script:
    - The path to the generated script and the implementation approach used
    - The list of steps and their automation potential
    - A note on which context variables are required at runtime
-   - For Go: remind the operator to run `go mod init example.com/your-procedure` and `go get github.com/danslimmon/donothing` if they have not already
+	- For Go: remind the operator to run `go mod init example.com/your-procedure` and `go get github.com/danslimmon/donothing@v0.2.0` if they have not already
 
 ## Notes
 
 - **Implementation choice**: Default to the Go (`danslimmon/donothing`) implementation unless the user explicitly requests bash or Go is not available. The Go library provides better structure, typed inputs/outputs between steps, and built-in Markdown generation.
-- **Go module setup**: The first time a user adopts the Go approach in a new directory, remind them to run `go mod init example.com/your-procedure` and `go get github.com/danslimmon/donothing` before running or compiling the script.
+- **Go module setup**: The first time a user adopts the Go approach in a new directory, remind them to run `go mod init example.com/your-procedure` and `go get github.com/danslimmon/donothing@v0.2.0` before running or compiling the script.
 - **Gradual automation in Go**: To automate a step, implement the logic as a Go function and call it directly in `main()` before `pcd.Execute()`. Remove the corresponding `AddStep` block so the procedure no longer prompts the operator for that step. Each step is isolated, so automating one step never requires changing any other. Once all steps are replaced with Go code, the procedure becomes a fully automated tool.
 - **Markdown generation**: Running with `--print` calls `pcd.Render(os.Stdout)`, which emits the full procedure as Markdown — useful for runbooks or documentation. Step `Long()` content is rendered as prose. Output names referenced with `@@OutputName@@` are rendered with their names and descriptions.
 - **Format auto-detection**: `extract_commands.py` inspects the first line for a JSON header (cast), checks whether the majority of lines match `  N  command` (history), and falls back to plain-text otherwise. Use `--format=` to override when auto-detection is incorrect.
