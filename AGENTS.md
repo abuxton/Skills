@@ -16,7 +16,7 @@ Use this alongside `.github/copilot-instructions.md`: that file captures reposit
 | [gitattributes-manager](skills/gitattributes-manager/SKILL.md) | Create, review, and safely update `.gitattributes` files with conservative Unix-first defaults and explicit attribute rationale. |
 | [xkcd-says-what](skills/xkcd-says-what/SKILL.md) | Fetch a matching XKCD comic and generate validated Markdown or HTML embed output for docs or terminal use. |
 | [asciinema-record](skills/asciinema-record/SKILL.md) | Record a terminal session to a named .cast file using asciinema, trim the recording to marked content, and optionally convert it to a GIF using agg. |
-| [do-nothing-scripting](skills/do-nothing-scripting/SKILL.md) | Derive a do-nothing bash script from an asciinema `.cast` file, a plain text file, shell history output, or a user interview — encoding each step as a manual prompt that the operator can later replace with real automation. |
+| [do-nothing-scripting](skills/do-nothing-scripting/SKILL.md) | Derive a do-nothing script from an asciinema `.cast` file, a plain text file, shell history output, or a user interview — encoding each step as a manual prompt that the operator can later replace with real automation. Preferred implementation uses the [danslimmon/donothing](https://github.com/danslimmon/donothing) Go library; a bash template is also maintained. |
 
 ## Using Skills
 

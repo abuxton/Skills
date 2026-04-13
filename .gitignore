@@ -152,7 +152,12 @@ tmp/
 
 .bob/**
 
-### Python ###
+### Go module cache (build artifacts) ###
+root/
+go.sum
+go.mod
+
+
 __pycache__/
 *.py[cod]
 **/skills/**
