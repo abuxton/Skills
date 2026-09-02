@@ -1,6 +1,10 @@
 ---
 name: shields-badges
-description: 'Analyse a repository to identify its focus, technology stack, and labels, then search for and apply appropriate shields.io badges to markdown files.'
+description: 'Analyse a repository to identify its focus, technology stack, and labels, then search for and apply appropriate shields.io badges to markdown files. This skill handles role, workflow, badge format reference, repository focus recognition guide, notes.
+
+    USE FOR: shields-badges, role, workflow, badge format reference, repository focus recognition guide.
+
+    DO NOT USE FOR: general coding questions unrelated to shields-badges, creating new projects from scratch.'
 ---
 
 # Shields Badges Skill
