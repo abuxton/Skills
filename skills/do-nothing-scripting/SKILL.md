@@ -1,6 +1,10 @@
 ---
 name: do-nothing-scripting
-description: 'Derive a do-nothing bash script from an asciinema .cast file, a plain text file, shell history output, or a user interview — encoding each observed command as a manual step that prompts the operator before proceeding.'
+description: 'Derive a do-nothing bash script from an asciinema .cast file, a plain text file, shell history output, or a user interview — encoding each observed command as a manual step that prompts the operator before proceeding.
+
+    USE FOR: do-nothing-scripting, role, input modes, do-nothing scripting principles, workflow.
+
+    DO NOT USE FOR: general coding questions unrelated to do-nothing-scripting, creating new projects from scratch.'
 ---
 
 # Do-Nothing Scripting
