@@ -1,13 +1,15 @@
 ---
 name: xkcd-says-what
-description: 'Fetch a matching XKCD comic and generate validated Markdown or HTML embed output for docs or terminal use.'
+description: 'Fetch a matching XKCD comic and generate validated Markdown or HTML embed output for docs or terminal use. This skill handles core principle, quick reference, workflow, available tools, example interaction.
+
+    DO NOT USE FOR: general coding questions unrelated to xkcd-says-what, creating new projects from scratch.'
 license: MIT
 metadata:
-  author: abuxton
-  version: "1.0"
-  type: utility
-  mode: application+generative
-  maturity_score: 18
+    author: abuxton
+    version: "1.0"
+    type: utility
+    mode: application+generative
+    maturity_score: 18
 ---
 
 # XKCD Says What: Fetch and Embed XKCD Comics
