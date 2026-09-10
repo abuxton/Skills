@@ -154,11 +154,8 @@ tmp/
 
 ### Go module cache (build artifacts) ###
 root/
-go.sum
-go.mod
 
 
 __pycache__/
 *.py[cod]
-**/skills/**
-!/skills/**
+**/__pycache__/**
